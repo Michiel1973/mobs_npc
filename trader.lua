@@ -6,13 +6,13 @@ local S = mobs.intllib
 mobs.human = {
 
 	names = {
-		"Bob", "Duncan", "Bill", "Tom", "James", "Ian", "Lenny",
-		"Dylan", "Ethan"
+		"Gunnar", "Kar", "Osvif", "Guthrum", "Helgi", "Gamli", "Thorlak",
+		"Arngeir", "Gudleif"
 	},
 
 	items = {
 		--{item for sale, price, chance of appearing in trader's inventory}
-		{"default:apple 10", "default:gold_ingot 2", 10},
+		{"default:steel_ingot 2", "default:gold_ingot 1", 10},
 		{"farming:bread 10", "default:gold_ingot 4", 5},
 		{"default:clay 10", "default:gold_ingot 2", 12},
 		{"default:brick 10", "default:gold_ingot 4", 17},
@@ -20,17 +20,16 @@ mobs.human = {
 		{"default:obsidian 10", "default:gold_ingot 15", 50},
 		{"default:diamond 1", "default:gold_ingot 5", 40},
 		{"farming:wheat 10", "default:gold_ingot 2", 17},
-		{"default:tree 5", "default:gold_ingot 4", 20},
-		{"default:stone 10", "default:gold_ingot 8", 17},
+		{"farming:cotton 10", "default:gold_ingot 2", 17},
 		{"default:desert_stone 10", "default:gold_ingot 8", 27},
 		{"default:sapling 1", "default:gold_ingot 1", 7},
 		{"default:pick_steel 1", "default:gold_ingot 2", 7},
 		{"default:sword_steel 1", "default:gold_ingot 2", 17},
 		{"default:shovel_steel 1", "default:gold_ingot 1", 17},
 		{"default:cactus 2", "default:gold_ingot 2", 40},
-		{"default:papyrus 2", "default:gold_ingot 2", 40},
-		{"default:mese_crystal_fragment 1", "default:dirt_with_grass 10", 90},
-		{"default:mese_crystal_fragment 1", "default:gold_ingot 5", 90},
+		{"default:papyrus 2", "default:gold_ingot 1", 40},
+		{"default:mese_crystal_fragment 1", "default:gold_ingot 20", 90},
+		{"default:mese_crystal_fragment 1", "default:gold_ingot 20", 90},
 	}
 }
 
@@ -39,15 +38,15 @@ mobs.human = {
 mobs:register_mob("mobs_npc:trader", {
 	type = "npc",
 	passive = false,
-	damage = 3,
+	damage = 15,
 	attack_type = "dogfight",
 	attacks_monsters = true,
 	attack_animals = false,
 	attack_npcs = false,
 	pathfinding = false,
-	hp_min = 10,
-	hp_max = 20,
-	armor = 100,
+	hp_min = 50,
+	hp_max = 150,
+	armor = 150,
 	collisionbox = {-0.35,-1.0,-0.35, 0.35,0.8,0.35},
 	visual = "mesh",
 	mesh = "mobs_character.b3d",
@@ -65,8 +64,7 @@ mobs:register_mob("mobs_npc:trader", {
 	water_damage = 0,
 	lava_damage = 4,
 	light_damage = 0,
-	follow = {"default:diamond"},
-	view_range = 15,
+	view_range = 6,
 	owner = "",
 	order = "stand",
 	fear_height = 3,
